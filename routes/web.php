@@ -13,5 +13,5 @@ Route::prefix('produtos')->group(function (){
     Route::get('/', \App\Livewire\Produto\ProdutoIndex::class)->name('produtos.index');
     Route::get('/create', \App\Livewire\Produto\ProdutoCreate::class)->name('produtos.create');
     Route::get('/{produto}', \App\Livewire\Produto\ProdutoShow::class)->name('produtos.show');
-    Route::get('/{produto}/edit', \App\Livewire\Produto\ProdutoEdit::class)->name('produtos.edit');
+    Route::get('/{produtoId}/edit', \App\Livewire\Produto\ProdutoEdit::class)->name('produtos.edit');
 });

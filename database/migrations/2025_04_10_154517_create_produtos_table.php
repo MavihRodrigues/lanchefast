@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('nome');
             $table->string('ingredientes');
             $table->string('valor', 8, 2);
-            $table->string('imagem')->nullable();
             $table->timestamps();
         });
     }

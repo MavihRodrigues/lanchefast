@@ -52,20 +52,20 @@
                                 <td>{{ $produto->telefone }}</td>
                                 <td>
                                     <a href="{{ route('produtos.show', $produto->id) }}" class="btn btn-sm btn-info">
-                                        <i class="bi bi-eye"></i>
+                                        <i class="bi bi-eye">👁‍🗨</i>
                                     </a>
                                     <a href="{{ route('produtos.edit', $produto->id) }}" class="btn btn-sm btn-warning">
-                                        <i class="bi bi-pencil"></i>
+                                        <i class="bi bi-pencil">♻</i>
                                     </a>
                                     <button wire:click="delete({{ $produto->id }})" class="btn btn-sm btn-danger"
-                                        onclick="return confirm('Tem certeza?')">
-                                        <i class="bi bi-trash"></i>
+                                        onclick="confirm('Tem certeza?')">
+                                        <i class="bi bi-trash">❌</i>
                                     </button>
                                 </td>
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="5" class="text-center">Nenhum produto encontrado encontrado.</td>
+                                <td colspan="5" class="text-center">Nenhum produto encontrado.</td>
                             </tr>
                         @endforelse
                     </tbody>

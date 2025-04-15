@@ -53,15 +53,15 @@
                                 <td>{{ $cliente->telefone }}</td>
                                 <td>
                                     <a href="{{ route('clientes.show', $cliente->id) }}" class="btn btn-sm btn-info">
-                                        <i class="bi bi-eye"></i>
+                                        <i class="bi bi-eye">👁‍🗨</i>e
                                     </a>
                                     <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-sm btn-warning">
-                                        <i class="bi bi-pencil"></i>
+                                        <i class="bi bi-pencil">♻</i>
                                     </a>
                                     <button wire:click="delete({{ $cliente->id }})" class="btn btn-sm btn-danger"
                                         onclick="return 
                                         confirm('Tem certeza?')">
-                                        <i class="bi bi-trash"></i>
+                                        <i class="bi bi-trash">❌</i>
                                     </button>
                                 </td>
                             </tr>

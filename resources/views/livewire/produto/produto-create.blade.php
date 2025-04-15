@@ -12,12 +12,13 @@
 
     <div class="card">
         <div class="card-body">
-            <form method="POST" action="{{ route('produtos.create') }}">
+            <form wire:submit.prevent="store">
                 @csrf
 
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome do Produto</label>
-                    <input type="text" class="form-control @error('nome') is-invalid @enderror" id="nome" name="nome" value="{{ old('nome') }}" required>
+                    <input type="text" class="form-control @error('nome') is-invalid @enderror" id="nome"
+                        placeholder="Hambúrguer" name="nome" wire:model="nome" required>
                     @error('nome')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -25,7 +26,8 @@
 
                 <div class="mb-3">
                     <label for="ingredientes" class="form-label">Ingredientes</label>
-                    <textarea class="form-control @error('ingredientes') is-invalid @enderror" id="ingredientes" name="ingredientes" rows="3" required>{{ old('ingredientes') }}</textarea>
+                    <textarea class="form-control @error('ingredientes') is-invalid @enderror" id="ingredientes"
+                        placeholder="Pão, hambúrguer..." name="ingredientes" wire:model="ingredientes" rows="3" required>{{ old('ingredientes') }}</textarea>
                     @error('ingredientes')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -33,7 +35,8 @@
 
                 <div class="mb-3">
                     <label for="valor" class="form-label">Valor</label>
-                    <input type="text" class="form-control @error('valor') is-invalid @enderror" id="valor" name="valor" value="{{ old('valor') }}" required>
+                    <input type="text" class="form-control @error('valor') is-invalid @enderror" id="valor"
+                        placeholder="12.50" name="valor" wire:model="valor" required>
                     @error('valor')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
